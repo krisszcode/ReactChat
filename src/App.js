@@ -1,21 +1,18 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import PageBar from './components/PageBar.js'
+import Navbar from './components/layouts/Navbar.js'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Home from './components/Home'
+import Dashboard from './components/dashboard/Dashboard'
 import Chat from './components/Chat'
 
 export class App extends Component {
   render() {
     return (
         <BrowserRouter>
-        <div>
-          <PageBar/>
+        <div className="app">
+          <Navbar/>
           <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route path="/chat" component={Chat}/>
-            <Route path="/register" component={Chat}/>
-            <Route path="/login" component={Chat}/>
+            <Route path='/' component={Dashboard}/>
           </Switch>
         </div>
       </BrowserRouter>
